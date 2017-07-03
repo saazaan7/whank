@@ -1,0 +1,220 @@
+/*reset*/
+ol,ul,li{
+    margin: 0px;
+    padding: 0px;
+}
+a:hover,a:focus{
+    text-decoration: none;
+}
+body{
+    font-family: monospace;
+}
+/*header image*/
+div.container-fluid.custom-header-image{margin: 0px; padding: 0px;}
+
+/*header*/
+.header-transparant .top-header, .navbar{
+
+}
+/*top header*/
+.top-header{
+    padding: 0px;
+    line-height: 20px;
+    background-color: #ecf0f1;
+}
+.top-header .top-icon i{
+    padding: 0px 5px;
+}
+.top-icon{
+    float: left;
+}
+.top-icon .social-menu li{
+    display: inline-block;
+    list-style: none;
+    border-right: 0.1px solid #fff;
+    padding: 3px;
+}
+.top-contact {
+    float: right;
+}
+.top-header .contact-info li{
+    list-style: none;
+    float: left;
+    font-size: 12px;
+    color: #384554;
+    margin-right: 30px;
+    padding: 5px 0;
+}
+.contact-info span {
+    font-size: 16px;
+    padding-right: 10px;
+    color: #99a3b0;
+}
+/*bootstrap menu css*/
+.navbar{
+    border-radius: 0px;
+    border: 0px;
+    margin-bottom: 0px;
+}
+/*left menu*/
+.navbar .navbar-nav.right {
+  display: inline-block;
+  float: left;
+  vertical-align: top;
+}
+/*right menu*/
+.navbar .navbar-nav.right {
+  display: inline-block;
+  float: right;
+  vertical-align: top;
+}
+/*center menu*/
+.navbar .navbar-nav.center {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+/*canvs menu CSS*/
+#canvasnav{
+    color: #fff;
+}
+span.right: {
+    color: #fff;
+    float: right;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 0px;
+    z-index: 999;
+    margin-bottom: 300px;
+    background-color: white;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/*Swiper slider*/
+.swiper-slide .slider-content{
+    position: absolute;
+    color: #fff;
+    top: 30%;
+    left: 5%;
+}
+.swiper-slide .slider-content h2{
+    font-size: 5vw;
+}
+.swiper-slide .slider-content p{
+    font-size: 2vw;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    color: #999999;
+    z-index: -1;
+}
+div,h1,h2,h3{
+    margin: 0px; padding: 0px;
+}
+.page-title{
+    padding: 20px;
+}
+article .post-title {
+    font-family: monospace;
+    padding: 0px 5px 15px 5px;
+}
+article .post-content{
+    padding: 15px 0px;
+    line-height: 1.5;
+}
+article .post-content p{
+    margin-bottom: 2em;
+}
+article .post-content a{
+    border-top: 1px solid blue;
+    border-bottom: 1px solid blue;
+    padding: 10px;
+    box-shadow: 0;
+    -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+article .post-content a:hover{
+    background-color: blue;
+    color: #fff;
+    box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+  -webkit-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+  -moz-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+}   
+article{   
+    -webkit-box-shadow: 0px 5px 25px 0px rgba(148,153,145,0.62);
+    -moz-box-shadow: 0px 5px 25px 0px rgba(148,153,145,0.62);
+    box-shadow: 0px 5px 25px 0px rgba(148,153,145,0.62);
+    padding: 20px 0px;
+    margin-bottom: 3em;
+}
+/*box-shadow:  0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);*/
+
+/*=============Responsive========*/
+@media only screen and (max-width: 800px){
+footer{
+    position: relative;
+    bottom: auto;
+    z-index: auto;
+}
+#main{
+    margin-bottom: 0px;
+}
+.top-icon{
+    float: none;
+    text-align: center;
+}
+.top-header .contact-info li{
+    float: none;
+    text-align: center;
+}
+.top-contact{
+    float: none;
+}
+}
