@@ -5,6 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package whank
+ * @since whank 1.0
  */
 
 if ( ! function_exists( 'whank_setup' ) ) :
@@ -16,6 +17,7 @@ if ( ! function_exists( 'whank_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function whank_setup() {
+	
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -37,14 +39,14 @@ function whank_setup() {
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
+	// Register navigation menu .
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'whank' ),
+		'primary'	=> esc_html__( 'Primary Menu', 'whank' ),
+		'sidenav'	=> esc_html__( 'Side Menu', 'whank' ),
+		'social'	=> esc_html__( 'Social Menu', 'whank' ),
 	) );
 
 	/*
@@ -91,20 +93,18 @@ add_action( 'after_setup_theme', 'whank_setup' );
  * @global int $content_width
  */
 function whank_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'whank_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'whank_content_width', 780 );
 }
 add_action( 'after_setup_theme', 'whank_content_width', 0 );
 
 /**
  * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function whank_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'whank' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'whank' ),
+		'name'          => esc_html__( 'Right Sidebar', 'whank' ),
+		'id'            => 'whank_right_sidebar',
+		'description'   => esc_html__( 'Add widgets here for right sidebar.', 'whank' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
