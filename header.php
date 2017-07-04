@@ -62,7 +62,7 @@
 			<?php
 			endif; ?>
 		</div> .site-branding -->
-		<nav id="site-navigation" class="main-navigation navbar navbar-inverse">
+		<nav id="site-navigation" class="main-navigation navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
 			        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -73,11 +73,22 @@
 			      </div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 				<?php
-					wp_nav_menu( array(
+					/*wp_nav_menu( array(
 						'theme_location'	=>	'primary',
 						'menu_id'	=>	'primary',
 						'menu_class' => 'nav navbar-nav center'
-						) );
+						) );*/
+					wp_nav_menu( array(
+		                'menu'              => 'primary',
+		                'theme_location'    => 'primary',
+		                'container'         => false,
+		                'container_class'   => 'collapse navbar-collapse',
+		                'container_id'      => 'myNavbar',
+		                'menu_id'	=>	'primary',
+						'menu_class' => 'nav navbar-nav center',
+		                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+		                'walker'            => new WP_Bootstrap_Navwalker(),
+		            ) );
 				?>
 					
 				</div>

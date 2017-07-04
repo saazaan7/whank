@@ -893,8 +893,4 @@ object {
 .gallery-caption {
 	display: block;
 }
-
-/*custom css*/
-ul#primary .current-menu-item {
-    background: red;
-}
+/*========================*/
