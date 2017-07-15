@@ -130,10 +130,10 @@ function whank_scripts() {
 	}
 
 	/*Enqueue additional css - fontawesome, bootstrap, swiper*/
-	wp_enqueue_style( 'fontawesome', WHANK_CSS_URL.'/font-awesome'.$suffix.'.css', array(), false, all );
-	wp_enqueue_style( 'bootstrap-style', WHANK_CSS_URL.'/bootstrap'.$suffix.'.css', array(), 3.3, all );
-	wp_register_style( 'swiper-style', WHANK_CSS_URL.'/swiper'.$suffix.'.css', array(), 3.4, all );
-	wp_enqueue_style( 'custom-style', WHANK_CSS_URL.'/custom.css', array(),'', all );
+	wp_enqueue_style( 'fontawesome', WHANK_CSS_URL.'/font-awesome'.$suffix.'.css', array(), false, 'all' );
+	wp_enqueue_style( 'bootstrap-style', WHANK_CSS_URL.'/bootstrap'.$suffix.'.css', array(), 3.3, 'all' );
+	wp_register_style( 'swiper-style', WHANK_CSS_URL.'/swiper'.$suffix.'.css', array(), 3.4, 'all' );
+	wp_enqueue_style( 'custom-style', WHANK_CSS_URL.'/custom.css', array(),'', 'all' );
 	/*Enqueue scripts*/
 	wp_register_script( 'swiper-script', WHANK_JS_URL. '/swiper.jquery'.$suffix.'.js', array('jquery'), '3.4', true );
 	wp_enqueue_script( 'bootstrap-script', WHANK_JS_URL. '/bootstrap'.$suffix.'.js', array('jquery'), '3.3', true );
