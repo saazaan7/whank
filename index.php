@@ -14,43 +14,50 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<?php do_action( 'whank_before_body_content' ); ?>
+
+	<div id="" class="content-area">
 		<main id="main" class="site-main">
+			<div class="container-fluid">
+	    		<div class="row">
+	    		<div class="archive page">
 
-		<?php
-		if ( have_posts() ) :
+				<?php
+				if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+					if ( is_home() && ! is_front_page() ) : ?>
+						<header>
+							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+						</header>
 
-			<?php
-			endif;
+					<?php
+					endif; ?>
+				<div class="promary col-md-8">
+				<?php
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+					get_template_part( 'template-parts/content', get_post_format() );
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				endwhile; 
+				get_template_part( 'navigation', 'none');
+				?>
+				</div>
+				<?php
+				
 
-			endwhile;
+				else :
 
-			the_posts_navigation();
+					get_template_part( 'template-parts/content', 'none' );
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
+				endif; ?>
+				</div> <!-- primary -->
+				</div>
+			</div>
 		</main><!-- #main -->
-	</div><!-- #primary -->
+	</div>
 
 <?php
 get_sidebar();
+do_action( 'whank_after_body_content' );
 get_footer();

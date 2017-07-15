@@ -9,6 +9,8 @@
 
 get_header(); ?>
 
+	<?php do_action( 'whank_before_body_content' ); ?>
+
 	<div id="" class="content-area">
 		<main id="main" class="site-main">
 			<div class="container-fluid">
@@ -36,16 +38,18 @@ get_header(); ?>
 						 */
 						get_template_part( 'template-parts/content', get_post_format() );
 
-					endwhile; ?>
+					endwhile; 
+					get_template_part( 'navigation', 'none');
+					?>
 					</div>
 					<?php
 					the_posts_navigation();
 
-				else :
+					else :
 
-					get_template_part( 'template-parts/content', 'none' );
+						get_template_part( 'template-parts/content', 'none' );
 
-				endif; ?>
+					endif; ?>
 				</div> <!-- archive page div end -->
 				</div> <!-- row end -->
 			</div> <!-- container-fluid -->	
@@ -54,4 +58,5 @@ get_header(); ?>
 
 <?php
 get_sidebar();
+do_action( 'whank_before_body_content' );
 get_footer();
