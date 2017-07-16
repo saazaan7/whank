@@ -12,7 +12,7 @@ function whank_meta_boxes()
 	add_meta_box( 'page-layout', __('Select layout','whank'), 'whank_layout_call', 'page', 'side', 'default' );
 
 	// Adding layout meta box for Post
-	add_meta_box( 'page-layout', __('Select layout','whank'), 'whank_layout_call', 'post', 'side', 'normal', 'default' );
+	add_meta_box( 'page-layout', __('Select layout','whank'), 'whank_layout_call', 'post', 'side', 'default' );
 }
 add_action('add_meta_boxes','whank_meta_boxes' );
 /****************************************************************/
