@@ -16,7 +16,7 @@ get_header(); ?>
 
 	<?php do_action( 'whank_before_body_content' ); ?>
 
-	<div id="" class="content-area">
+	<div id="primary" class="content-area  col-md-8">
 		<main id="main" class="site-main">
 			<div class="container-fluid">
 	    		<div class="row">
@@ -32,7 +32,7 @@ get_header(); ?>
 
 					<?php
 					endif; ?>
-				<div class="promary col-md-8">
+				<div class="">
 				<?php
 				/* Start the Loop */
 				while ( have_posts() ) : the_post();
@@ -40,7 +40,7 @@ get_header(); ?>
 					get_template_part( 'template-parts/content', get_post_format() );
 
 				endwhile; 
-				get_template_part( 'navigation', 'none');
+					
 				?>
 				</div>
 				<?php
