@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<?php do_action( 'whank_before_body_content' ); ?>
 
-	<div id="" class="content-area">
+	<div id="primary" class="content-area col-md-8">
 		<main id="main" class="site-main">
 			<div class="container-fluid">
 	    		<div class="row">
@@ -26,7 +26,7 @@ get_header(); ?>
 							the_archive_description( '<div class="archive-description">', '</div>' );
 						?>
 					</header><!-- .page-header -->
-					<div class="primary col-md-8">
+					<div class="">
 					<?php
 					/* Start the Loop */
 					while ( have_posts() ) : the_post();
