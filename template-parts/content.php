@@ -49,8 +49,8 @@
 			?>
 		</div><!-- .entry-content -->
 
-		<footer class="entry-footer">
+		<div class="entry-footer">
 			<?php whank_entry_footer(); ?>
-		</footer><!-- .entry-footer -->
+		</div><!-- .entry-footer -->
 		</div> <!-- /entry content -->
 	</article><!-- #post-<?php the_ID(); ?> -->

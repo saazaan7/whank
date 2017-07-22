@@ -126,6 +126,9 @@ span.right: {
     z-index: 999;
     margin-bottom: 300px;
     background-color: white;
+    -webkit-box-shadow: -2px 21px 49px -17px rgba(0,0,0,0.53);
+    -moz-box-shadow: -2px 21px 49px -17px rgba(0,0,0,0.53);
+    box-shadow: -2px 21px 49px -17px rgba(0,0,0,0.53);
 }
 
 @media screen and (max-height: 450px) {
@@ -146,13 +149,6 @@ span.right: {
     font-size: 2vw;
 }
 
-footer{
-    position: fixed;
-    bottom: 0;
-    background-color: #fff;
-    color: #999999;
-    z-index: -1;
-}
 div,h1,h2,h3{
     margin: 0px; padding: 0px;
 }
@@ -206,6 +202,15 @@ article{
 }
 #secondary>section>ul{
     padding: 0px 10px;
+}
+
+/*==========footer======*/
+footer{
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    color: #999999;
+    z-index: -1;
 }
 
 /*=============Responsive========*/
