@@ -212,7 +212,26 @@ footer{
     color: #999999;
     z-index: -1;
 }
-
+footer .whank-footer .widget-title{
+    font-size: 25px;
+    color: #34495e;
+    padding-bottom: 5px;
+}
+footer .whank-footer ul {
+    list-style: circle;
+    padding-top: 3px;
+}
+ /*footer .whank-footer ul li::before{
+    content: "\2192";
+}*/
+footer .whank-footer ul li{
+    font-size: 16px;
+}
+footer .whank-footer .widget-title::first-letter{
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+    font-size: 30px;
+}
 /*=============Responsive========*/
 @media only screen and (max-width: 800px){
 footer{
@@ -234,4 +253,12 @@ footer{
 .top-contact{
     float: none;
 }
+}
+
+/*======input fields========*/
+input[type=search] {
+    border-radius: 0px;
+    padding: 9px;
+    border: none;
+    font-size: 22px;
 }
