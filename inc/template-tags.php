@@ -26,7 +26,7 @@ function whank_posted_on() {
 
 	$posted_on = sprintf(
 		/* translators: %s: post date. */
-		esc_html_x( 'Posted on %s', 'post date', 'whank' ),
+		esc_html_x( ' %s', 'post date', 'whank' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
@@ -52,7 +52,7 @@ function whank_entry_footer() {
 		$categories_list = get_the_category_list( esc_html__( ', ', 'whank' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'whank' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">' . esc_html__( '%1$s', 'whank' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
@@ -61,25 +61,6 @@ function whank_entry_footer() {
 			/* translators: 1: list of tags. */
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'whank' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
-	}
-
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: post title */
-					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'whank' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
-		echo '</span>';
 	}
 
 	edit_post_link(

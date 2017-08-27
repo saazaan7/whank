@@ -22,6 +22,9 @@
 			<div class="entry-meta">
 				<?php whank_posted_on(); ?>
 			</div><!-- .entry-meta -->
+			<div class="cat-names">
+			<?php whank_entry_footer(); ?>
+			</div><!-- .entry-footer -->
 			<?php
 			endif; ?>
 		</header><!-- .entry-header -->
@@ -48,9 +51,5 @@
 				) );
 			?>
 		</div><!-- .entry-content -->
-
-		<div class="entry-footer">
-			<?php whank_entry_footer(); ?>
-		</div><!-- .entry-footer -->
 		</div> <!-- /entry content -->
 	</article><!-- #post-<?php the_ID(); ?> -->
