@@ -67,7 +67,12 @@
 			</div>
 			<div class="col-md-8 col-sm-12">
 				<div class="header-sidebar">
-					This is header sidebar
+					<?php
+					if ( is_active_sidebar( 'whank_header_sidebar_1' )) {
+						if ( !dynamic_sidebar( 'whank_header_sidebar_1' )) :
+						endif;
+					}
+					?>
 				</div>
 			</div>
 		</div> <!-- branding -->
