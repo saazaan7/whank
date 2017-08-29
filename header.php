@@ -24,7 +24,9 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'whank' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="top-header">
+		<?php
+		if (get_theme_mod( 'whank_top_bar_on_off' ) == 1) { ?>
+			<div class="top-header">
 		    <div class="container-fluid">
 		      <div class="top-icon">
 		        <ul class="social-menu">
@@ -43,6 +45,9 @@
 		      </div>
 		    </div>
 		</div> <!-- top header -->
+		<?php 
+		}
+		?>
 		<div class="container-fluid custom-header-image">
 	      <img class="img-responsive" src="images/hdslide1.jpg">
 		</div>

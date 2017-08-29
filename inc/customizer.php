@@ -25,6 +25,46 @@ function whank_customize_register( $wp_customize ) {
 			'render_callback' => 'whank_customize_partial_blogdescription',
 		) );
 	}
+
+	// Header Options panel
+	$wp_customize-> add_panel('whank_header_options',array(
+		'capability'	=> 'edit_theme_options',
+		'description'	=> esc_html__( 'All the header related options','whank' ),
+		'priority'		=> 300,
+		'title'			=> esc_html__( 'Whank Header Options','whank' ),
+		));
+	
+	// Top bar
+	$wp_customize-> add_section( 'whank_top_bar_section', array(
+		'priority'		=> 310,
+		'title'			=> esc_html__( 'Top bar On/Off','whank' ),
+		'panel'			=> 'whank_header_options'
+		));
+
+	$wp_customize-> add_setting( 'whank_top_bar_on_off', array(
+		'default'		=> 0,
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback'	=> 'whank_sanitize_checkbox',
+		));
+
+	$wp_customize-> add_control( 'whank_top_bar_on_off', array(
+		'type'			=> 'checkbox',
+		'label'			=> esc_html__( 'Enable top bar','whank' ),
+		'section'		=> 'whank_top_bar_section'
+		) );
+
+
+	/******************************************************************/
+	//Sanitization Functions
+
+	function whank_sanitize_checkbox( $input )
+	{
+		if ( $input == 1 ) {
+			return 1;
+		} else {
+			return '';
+		}
+	}
 }
 add_action( 'customize_register', 'whank_customize_register' );
 
