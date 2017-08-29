@@ -3,6 +3,12 @@ ol,ul,li{
     margin: 0px;
     padding: 0px;
 }
+.right{
+    float: right!important;
+}
+.left{
+    float: left!important;
+}
 a:hover,a:focus{
     text-decoration: none;
 }

@@ -53,10 +53,26 @@ function whank_customize_register( $wp_customize ) {
 		'section'		=> 'whank_top_bar_section'
 		) );
 
+	// Top bar content allign
+	$wp_customize-> add_setting( 'whank_topbar_content_allign', array(
+		'default'		=> 'social_icon_left',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback'	=> 'whank_radio_sanitize'
+		));
+	$wp_customize-> add_control( 'whank_topbar_content_allign', array(
+		'type'			=> 'radio',
+		'label'			=> esc_html__( 'Choose the required option', 'whank' ),
+		'section'		=> 'whank_top_bar_section',
+		'choices'		=> array(
+				'social_icon_left' => esc_html__( 'Social icons on left' ),
+				'contact_info_left'=> esc_html__( 'Contact informations on left', 'whank' ),
+			)
+		));
+
 
 	/******************************************************************/
 	//Sanitization Functions
-
+	// Checkbox senitization
 	function whank_sanitize_checkbox( $input )
 	{
 		if ( $input == 1 ) {
@@ -64,6 +80,18 @@ function whank_customize_register( $wp_customize ) {
 		} else {
 			return '';
 		}
+	}
+
+	// Radio sanitization
+	function whank_radio_sanitize( $input ){
+		//Ensure the input is slug
+		$input = sanitize_key( $input );
+
+		// Get list of choices from the control associated with the setting.
+		$choices = $setting->manager->get_control( $setting->id)->choices;
+
+		// If the input is a valid key then return it; otherwise default.
+		return( array_key_exists( $input, $choices) ? $input: $setting->default );
 	}
 }
 add_action( 'customize_register', 'whank_customize_register' );

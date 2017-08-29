@@ -28,21 +28,28 @@
 		if (get_theme_mod( 'whank_top_bar_on_off' ) == 1) { ?>
 			<div class="top-header">
 		    <div class="container-fluid">
-		      <div class="top-icon">
-		        <ul class="social-menu">
-		          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-		          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-		          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-		          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-		        </ul>
-		      </div>
-		      <div class="top-contact">
-		        <ul class="contact-info">
-		          <li><span><i class="fa fa-map-marker"></i></span>New York, NY 928865, USA</li>
-		          <li><span><i class="fa fa-phone"></i></span>+987-265945868</li>
-		          <li><span><i class="fa fa-envelope"></i></span>info@themegrill.com</li>
-		        </ul>
-		      </div>
+		    <?php
+		    	$topbar = 'left';
+		    	$topinfo = 'right';
+		    	if (get_theme_mod('whank_topbar_content_allign','social_icon_left' )!='social_icon_left') {
+		    		$topbar = 'right';
+		    		$topinfo = 'left';
+		    	} ?>
+			      <div class="top-icon <?php echo( esc_attr__($topbar)); ?>">
+			        <ul class="social-menu">
+			          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+			          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+			          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+			          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+			        </ul>
+			      </div>
+			      <div class="top-contact <?php echo( esc_attr__($topinfo)); ?>">
+			        <ul class="contact-info">
+			          <li><span><i class="fa fa-map-marker"></i></span>New York, NY 928865, USA</li>
+			          <li><span><i class="fa fa-phone"></i></span>+987-265945868</li>
+			          <li><span><i class="fa fa-envelope"></i></span>info@themegrill.com</li>
+			        </ul>
+			      </div>
 		    </div>
 		</div> <!-- top header -->
 		<?php 
