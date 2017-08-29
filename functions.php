@@ -192,3 +192,6 @@ require_once('wp-bootstrap-navwalker.php');
 
 // Load additional functions
 require get_template_directory() . '/inc/functions.php';
+
+// Load widget functions
+require get_template_directory() . '/inc/widget.php';
