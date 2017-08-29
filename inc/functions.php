@@ -8,11 +8,3 @@
  *
  * @package whank
  */
-function whank_topbar_allignment( ){
-	$allignment = 'left' ;
-	if (get_theme_mod( 'whank_topbar_content_allign', 'social_icon_left' )!='social_icon_left') {
-		$allignment = 'right';
-	}
-	echo $allignment;
-	echo "string";
-}
