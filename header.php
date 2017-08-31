@@ -56,7 +56,7 @@
 		}
 		?>
 		<div class="container-fluid custom-header-image">
-	      <img class="img-responsive" src="images/hdslide1.jpg">
+	      <?php the_custom_header_markup(); ?>
 		</div>
 		<div class="branding container">
 			<div class="col-md-4 col-sm-12">

@@ -20,9 +20,11 @@ function whank_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'whank_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 1000,
+		'video'					 => true,
+		'width'                  => 1500,
 		'height'                 => 250,
 		'flex-height'            => true,
+		'flex-width'			 => true,
 		'wp-head-callback'       => 'whank_header_style',
 	) ) );
 }
