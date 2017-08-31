@@ -83,7 +83,7 @@ function whank_customize_register( $wp_customize ) {
 	}
 
 	// Radio sanitization
-	function whank_radio_sanitize( $input ){
+	function whank_radio_sanitize( $input, $setting ){
 		//Ensure the input is slug
 		$input = sanitize_key( $input );
 
