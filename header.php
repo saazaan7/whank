@@ -54,9 +54,11 @@
 		</div> <!-- top header -->
 		<?php 
 		}
-		?>
-		<div class="container-fluid custom-header-image">
-	      <?php the_custom_header_markup(); ?>
+
+	      if ( get_theme_mod( 'whank_header_media_position','position_two' )=='position_one' ) {
+	      	whank_header_media_render();
+	      }
+	      ?>
 		</div>
 		<div class="branding container">
 			<div class="col-md-4 col-sm-12">
@@ -88,6 +90,11 @@
 				</div>
 			</div>
 		</div> <!-- branding -->
+		<?php
+		if ( get_theme_mod( 'whank_header_media_position','position_two' )=='position_two' ) {
+	      	whank_header_media_render();
+	      }
+		?>
 		<nav id="site-navigation" class="main-navigation navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -142,7 +149,11 @@
 		      </div>
 		    </div>
 		</nav> -->
-
+		<?php
+		if ( get_theme_mod( 'whank_header_media_position','position_two' )=='position_three' ) {
+	      	whank_header_media_render();
+	      }
+		?>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

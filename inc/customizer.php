@@ -26,7 +26,7 @@ function whank_customize_register( $wp_customize ) {
 		) );
 	}
 
-	/*// Header Options panel
+	// Header Options panel
 	$wp_customize-> add_panel('whank_header_options',array(
 		'capability'	=> 'edit_theme_options',
 		'description'	=> esc_html__( 'All the header related options','whank' ),
@@ -36,7 +36,7 @@ function whank_customize_register( $wp_customize ) {
 	
 	// Top bar
 	$wp_customize-> add_section( 'whank_top_bar_section', array(
-		'priority'		=> 310,
+		'priority'		=> 1,
 		'title'			=> esc_html__( 'Top bar On/Off','whank' ),
 		'panel'			=> 'whank_header_options'
 		));
@@ -68,12 +68,36 @@ function whank_customize_register( $wp_customize ) {
 				'contact_info_left'=> esc_html__( 'Contact informations on left', 'whank' ),
 			)
 		));
-*/
+
+	// Header image position option
+   $wp_customize->add_section('whank_header_media_position_section', array(
+      'priority' => 3,
+      'title' => esc_html__('Header Image Position', 'whank'),
+      'panel' => 'whank_header_options'
+   ));
+
+   $wp_customize->add_setting( 'whank_header_media_position', array(
+      'default' => 'position_two',
+      'capability' => 'edit_theme_options',
+      'sanitize_callback' => 'whank_radio_sanitize'
+   ));
+
+   $wp_customize->add_control('whank_header_media_position', array(
+      'type' => 'radio',
+      'label' => esc_html__('Choose header media display position.','whank'),
+      'section' => 'whank_header_media_position_section',
+      'choices' => array(
+         'position_one' => esc_html__( 'Display the Header media just above the site title/text.', 'whank' ),
+         'position_two' => esc_html__( 'Display the Header media between site title/text and the main/primary menu.(Default)', 'whank' ),
+         'position_three' => esc_html__( 'Display the Header image below main/primary menu.', 'whank' )
+      )
+   ));
+
 
 	/******************************************************************/
 	//Sanitization Functions
 	// Checkbox senitization
-	/*function whank_sanitize_checkbox( $input )
+	function whank_sanitize_checkbox( $input )
 	{
 		if ( $input == 1 ) {
 			return 1;
@@ -92,7 +116,7 @@ function whank_customize_register( $wp_customize ) {
 
 		// If the input is a valid key then return it; otherwise default.
 		return( array_key_exists( $input, $choices) ? $input: $setting->default );
-	}*/
+	}
 }
 add_action( 'customize_register', 'whank_customize_register' );
 
