@@ -26,7 +26,7 @@ function whank_customize_register( $wp_customize ) {
 		) );
 	}
 
-	// Header Options panel
+	/*// Header Options panel
 	$wp_customize-> add_panel('whank_header_options',array(
 		'capability'	=> 'edit_theme_options',
 		'description'	=> esc_html__( 'All the header related options','whank' ),
@@ -68,12 +68,12 @@ function whank_customize_register( $wp_customize ) {
 				'contact_info_left'=> esc_html__( 'Contact informations on left', 'whank' ),
 			)
 		));
-
+*/
 
 	/******************************************************************/
 	//Sanitization Functions
 	// Checkbox senitization
-	function whank_sanitize_checkbox( $input )
+	/*function whank_sanitize_checkbox( $input )
 	{
 		if ( $input == 1 ) {
 			return 1;
@@ -92,7 +92,7 @@ function whank_customize_register( $wp_customize ) {
 
 		// If the input is a valid key then return it; otherwise default.
 		return( array_key_exists( $input, $choices) ? $input: $setting->default );
-	}
+	}*/
 }
 add_action( 'customize_register', 'whank_customize_register' );
 
