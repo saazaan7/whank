@@ -36,19 +36,14 @@
 		    		$topinfo = 'left';
 		    	} ?>
 			      <div class="top-icon <?php echo( esc_attr__($topbar)); ?>">
-			        <ul class="social-menu">
-			          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-			          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-			          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-			          <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
-			        </ul>
+			        <?php
+			        	wp_nav_menu( array( 'theme_location' => 'social', 'menu_class' => 'social-menu', 'fallback_cb' => false, 'link_before' => '<span class="screen-reader-text">', 'link_after' => '</span>', 'depth' => 1, ) );
+			        ?>
 			      </div>
 			      <div class="top-contact <?php echo( esc_attr__($topinfo)); ?>">
-			        <ul class="contact-info">
-			          <li><span><i class="fa fa-map-marker"></i></span>New York, NY 928865, USA</li>
-			          <li><span><i class="fa fa-phone"></i></span>+987-265945868</li>
-			          <li><span><i class="fa fa-envelope"></i></span>info@themegrill.com</li>
-			        </ul>
+			        <?php
+			        	echo whank_top_header_information();
+			        ?>
 			      </div>
 		    </div>
 		</div> <!-- top header -->
@@ -56,7 +51,7 @@
 		}
 
 	      if ( get_theme_mod( 'whank_header_media_position','position_two' )=='position_one' ) {
-	      	whank_header_media_render();
+	      	 echo whank_header_media_render();
 	      }
 	      ?>
 		</div>

@@ -50,7 +50,8 @@ function whank_customize_register( $wp_customize ) {
 	$wp_customize-> add_control( 'whank_top_bar_on_off', array(
 		'type'			=> 'checkbox',
 		'label'			=> esc_html__( 'Enable top bar','whank' ),
-		'section'		=> 'whank_top_bar_section'
+		'section'		=> 'whank_top_bar_section',
+		'setting'		=> 'whank_top_bar_on_off',
 		) );
 
 	// Top bar content allign
@@ -66,7 +67,74 @@ function whank_customize_register( $wp_customize ) {
 		'choices'		=> array(
 				'social_icon_left' => esc_html__( 'Social icons on left' ),
 				'contact_info_left'=> esc_html__( 'Contact informations on left', 'whank' ),
-			)
+			),
+		'setting'		=> 'whank_topbar_content_allign',
+		));
+
+	// Top bar content options
+	$wp_customize-> add_setting( 'whank_topbar_information_icon_one', array(
+		'default'		=> '',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses', //https://divpusher.com/blog/wordpress-customizer-sanitization-examples#text		
+		) );
+	$wp_customize-> add_control( 'whank_topbar_information_icon_one', array(
+		'label'			=> esc_html__( 'Please type icon Class for First Option ', 'whank' ),
+		'description'	=> __( 'Please refer <a href="http://fontawesome.io/icons/" target="_blank">HERE</a>', 'whank' ),
+		'section'		=> 'whank_top_bar_section',
+		'setting'		=> 'whank_topbar_information_icon_one',
+		));
+	$wp_customize-> add_setting( 'whank_topbar_information_content_one', array(
+		'default'		=> '',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses', //https://divpusher.com/blog/wordpress-customizer-sanitization-examples#text		
+		) );
+	$wp_customize-> add_control( 'whank_topbar_information_content_one', array(
+		'label'			=> esc_html__( 'Please type informations for First Option ', 'whank' ),
+		'section'		=> 'whank_top_bar_section',
+		'setting'		=> 'whank_topbar_information_content_one',
+		));
+
+	$wp_customize-> add_setting( 'whank_topbar_information_icon_two', array(
+		'default'		=> '',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses', //https://divpusher.com/blog/wordpress-customizer-sanitization-examples#text		
+		) );
+	$wp_customize-> add_control( 'whank_topbar_information_icon_two', array(
+		'label'			=> esc_html__( 'Please type icon Class for Second Option ', 'whank' ),
+		'description'	=> __( 'Please refer <a href="http://fontawesome.io/icons/" target="_blank">HERE</a>', 'whank' ),
+		'section'		=> 'whank_top_bar_section',
+		'setting'		=> 'whank_topbar_information_icon_two',
+		));
+	$wp_customize-> add_setting( 'whank_topbar_information_content_two', array(
+		'default'		=> '',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses', //https://divpusher.com/blog/wordpress-customizer-sanitization-examples#text		
+		) );
+	$wp_customize-> add_control( 'whank_topbar_information_content_two', array(
+		'label'			=> esc_html__( 'Please type informations for Second Option ', 'whank' ),
+		'section'		=> 'whank_top_bar_section',
+		'setting'		=> 'whank_topbar_information_content_two',
+		));
+
+	$wp_customize-> add_setting( 'whank_topbar_information_icon_three', array(
+		'default'		=> '',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses', //https://divpusher.com/blog/wordpress-customizer-sanitization-examples#text		
+		) );
+	$wp_customize-> add_control( 'whank_topbar_information_icon_three', array(
+		'label'			=> esc_html__( 'Please type icon Class for Third Option ', 'whank' ),
+		'description'	=> __( 'Please refer <a href="http://fontawesome.io/icons/" target="_blank">HERE</a>', 'whank' ),
+		'section'		=> 'whank_top_bar_section',
+		'setting'		=> 'whank_topbar_information_icon_three',
+		));
+	$wp_customize-> add_setting( 'whank_topbar_information_content_three', array(
+		'default'		=> '',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses', //https://divpusher.com/blog/wordpress-customizer-sanitization-examples#text		
+		) );
+	$wp_customize-> add_control( 'whank_topbar_information_content_three', array(
+		'label'			=> esc_html__( 'Please type informations for Third Option ', 'whank' ),
+		'section'		=> 'whank_top_bar_section',
+		'setting'		=> 'whank_topbar_information_content_three',
 		));
 
 	// Header image position option

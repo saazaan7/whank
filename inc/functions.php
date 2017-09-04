@@ -11,6 +11,9 @@
 
 // Header functions
 
+/*
+* function to render header video and image
+*/
 if ( ! function_exists( 'whank_header_media_render' ) ) :
 
 	function whank_header_media_render(){
@@ -22,3 +25,31 @@ if ( ! function_exists( 'whank_header_media_render' ) ) :
 		return $output;
 	}
 endif;
+
+/*
+*
+* function to render top header informations
+*
+*/
+ if ( !function_exists( 'whank_top_header_information') ) :
+
+ 	function whank_top_header_information(){
+ 		$first_icon		= get_theme_mod( 'whank_topbar_information_icon_one' );
+ 		$first_info		= get_theme_mod( 'whank_topbar_information_content_one' );
+ 		$second_icon	= get_theme_mod( 'whank_topbar_information_icon_two' );
+ 		$second_info 	= get_theme_mod( 'whank_topbar_information_content_two' );
+ 		$third_icon		= get_theme_mod( 'whank_topbar_information_icon_three' );
+ 		$third_info 	= get_theme_mod( 'whank_topbar_information_content_three' );
+ 		$output			= '';
+ 		if ( !empty(($first_icon)&&($first_info))||(($second_icon)&&($second_info))||(($third_info)&&($third_info)) ) {
+ 			$output		= '<ul class="contact-info">
+							<li><span><i class="fa fa-' . esc_attr( $first_icon ) .' "></i></span>' . esc_html__( $first_info,'whank' ) . '</li>
+							<li><span><i class="fa fa-' . esc_attr( $second_icon ) . ' "></i></span>' . esc_html__( $second_info,'whank' ) . '</li>
+							<li><span><i class="fa fa-' . esc_attr( $third_icon ) . ' "></i></span>' . esc_html__( $third_info,'whank' ) . '</li>
+						</ul>';
+ 		}
+ 		return $output;
+ 	}
+endif;
+
+

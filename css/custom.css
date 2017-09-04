@@ -37,7 +37,7 @@ div.container-fluid.custom-header-image{margin: 0px; padding: 0px;}
 .top-icon .social-menu li{
     display: inline-block;
     list-style: none;
-    border-right: 0.1px solid #fff;
+    /*border-right: 0.1px solid #fff;*/
     padding: 3px;
 }
 .top-contact {
@@ -309,4 +309,49 @@ iframe#wp-custom-header-video {
 
 .wp-custom-header-video-button.wp-custom-header-video-pause:before{
     content: '\f04c';
+}
+
+/*social menu*/
+.social-menu li a {
+    background-color: #fff;
+    border-radius: 100%;
+    font-size: 12px;
+    font-family: fontawesome;
+    text-align: center;
+    display: inline-block;
+    line-height: 30px;
+    height: 30px;
+    width: 30px;
+    color: #99a3b0;
+}
+.social-menu li a[href*="facebook.com"]::before {
+    content: "\f09a";
+}
+
+.social-menu li a[href*="linkedin.com"]::before {
+    content: "\f0e1";
+}
+
+.social-menu li a[href*="twitter.com"]::before {
+    content: "\f099";
+}
+
+.social-menu li a[href*="plus.google.com"]::before {
+    content: "\f0d5";
+}
+
+.social-menu li a[href*="twitter.com"]:hover {
+    color: #333333;
+}
+
+.social-menu li a[href*="plus.google.com"]:hover {
+    color: #333333;
+}
+
+.social-menu li a[href*="linkedin.com"]:hover {
+    color: #333333;
+}
+
+.social-menu li a[href*="facebook.com"]:hover {
+    color: #333333;
 }
