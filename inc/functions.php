@@ -32,7 +32,11 @@ endif;
 *
 */
  if ( !function_exists( 'whank_top_header_information') ) :
-
+ 	/**
+ * Content for Top Header Section's info.
+ *
+ * @since Whank 1.0
+ */
  	function whank_top_header_information(){
  		$first_icon		= get_theme_mod( 'whank_topbar_information_icon_one' );
  		$first_info		= get_theme_mod( 'whank_topbar_information_content_one' );

@@ -355,3 +355,18 @@ iframe#wp-custom-header-video {
 .social-menu li a[href*="facebook.com"]:hover {
     color: #333333;
 }
+
+/*=========logo==========*/
+
+.site-branding .site-logo{
+    padding: 3px 5px 0px 0px;
+}
+.site-branding .site-logo a img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.site-branding .title-header{
+    text-align: left;
+    padding: 15px 0px 0px 5px;
+}
