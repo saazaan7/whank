@@ -22,6 +22,10 @@ div.container-fluid.custom-header-image{margin: 0px; padding: 0px;}
 .header-transparant .top-header, .navbar{
 
 }
+video{
+    width: 100%;
+    height: auto;
+}
 /*top header*/
 .top-header{
     padding: 0px;
