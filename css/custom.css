@@ -26,6 +26,9 @@ video{
     width: 100%;
     height: auto;
 }
+.header-sidebar{
+    text-align: center;
+}
 /*top header*/
 .top-header{
     padding: 0px;
