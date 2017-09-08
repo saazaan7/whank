@@ -56,4 +56,23 @@ endif;
  	}
 endif;
 
+/**
+ * Returns a "Continue Reading" link for excerpts
+ */
+function whank_continue_reading() {
+	return '';
+}
+add_filter( 'excerpt_more', 'whank_continue_reading' );
+
+if ( ! function_exists( 'whank_excerpt_length' ) ) :
+/**
+ * Whank Excerpt Length
+ *
+ * @since Whank 1.0
+ */
+function whank_excerpt_length( $length ) {
+	return 25;
+}
+endif;
+add_filter( 'excerpt_length', 'whank_excerpt_length' );
 
