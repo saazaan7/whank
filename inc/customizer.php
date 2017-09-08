@@ -158,8 +158,33 @@ function whank_customize_register( $wp_customize ) {
          'position_one' => esc_html__( 'Display the Header media just above the site title/text.', 'whank' ),
          'position_two' => esc_html__( 'Display the Header media between site title/text and the main/primary menu.(Default)', 'whank' ),
          'position_three' => esc_html__( 'Display the Header image below main/primary menu.', 'whank' )
-      )
+      ),
+      'setting'	=> 'whank_header_media_position',
    ));
+
+   // Miscellaneous options
+   $wp_customize-> add_panel( 'whank_miscellaneous_options',array(
+		'capability'	=> 'edit_theme_options',
+		'priority'		=> 310,
+		'title'			=> esc_html__( 'Whank Miscellaneous Options','whank' ),
+	));
+   $wp_customize-> add_section( 'whank_read_more_button_section', array(
+   		'priority'		=> 1,
+   		'title'			=> esc_html__( 'Read more text','whank' ),
+   		'description'	=> esc_html__( 'Modify the botton text showing excerpt', 'whank' ),
+   		'panel'			=> 'whank_miscellaneous_options'
+   	));
+   $wp_customize-> add_setting( 'whank_read_more_button',array(
+   		'defailt'		=> esc_html__( 'Continue reading','whank' ),
+   		'capability'	=> 'edit_theme_options',
+   		'sanitize_callback' => 'wp_filter_nohtml_kses'
+   	));
+   $wp_customize-> add_control( 'whank_read_more_button', array(
+   		'label'			=> esc_html__( 'Excerpt button text','whank' ),
+   		'section'		=> 'whank_read_more_button_section',
+   		'setting'		=> 'whank_read_more_button'
+   	));
+
 
 
 	/******************************************************************/

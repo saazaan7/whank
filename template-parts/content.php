@@ -9,6 +9,7 @@
 
 ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php do_action( 'whank_before_post_content' ); ?>
 		<div class="entry-content">
 		<header class="entry-header post-title text-center">
 			<?php
@@ -42,7 +43,7 @@
 					<?php the_content(); ?>
 				<?php else: ?>
 					<?php the_excerpt(); ?>
-					<a href="<?php get_the_permalink( $post->ID );  ?>"> Continue reading -></a>
+					<a href="<?php the_permalink( $post->ID );  ?>"> <?php echo( get_theme_mod( 'whank_read_more_button', __( 'Continue reading', 'whank' ) )); ?> -></a>
 				<?php endif; 
 
 				wp_link_pages( array(
@@ -52,4 +53,5 @@
 			?>
 		</div><!-- .entry-content -->
 		</div> <!-- /entry content -->
+	<?php do_action( 'whank_after_post_content' ); ?>
 	</article><!-- #post-<?php the_ID(); ?> -->
