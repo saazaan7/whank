@@ -27,34 +27,33 @@
 		<?php
 		if (get_theme_mod( 'whank_top_bar_on_off' ) == 1) { ?>
 			<div class="top-header">
-		    <div class="container-fluid">
-		    <?php
-		    	$topbar = 'left';
-		    	$topinfo = 'right';
-		    	if (get_theme_mod('whank_topbar_content_allign','social_icon_left' )!='social_icon_left') {
-		    		$topbar = 'right';
-		    		$topinfo = 'left';
-		    	} ?>
-			      <div class="top-icon <?php echo( esc_attr__($topbar)); ?>">
-			        <?php
-			        	wp_nav_menu( array( 'theme_location' => 'social', 'menu_class' => 'social-menu', 'fallback_cb' => false, 'link_before' => '<span class="screen-reader-text">', 'link_after' => '</span>', 'depth' => 1, ) );
-			        ?>
-			      </div>
-			      <div class="top-contact <?php echo( esc_attr__($topinfo)); ?>">
+		    	<div class="container-fluid">
+		    		<?php
+		    		$topbar = 'left';
+		    		$topinfo = 'right';
+		    		if (get_theme_mod('whank_topbar_content_allign','social_icon_left' )!='social_icon_left') {
+		    			$topbar = 'right';
+		    			$topinfo = 'left';
+		    		} ?>
+			      	<div class="top-icon <?php echo( esc_attr__($topbar)); ?>">
+			        	<?php
+			        	wp_nav_menu( array( 'theme_location' => 'social', 'menu_class' => 'social-menu', 'fallback_cb' => false, 'link_before' => '<span class="screen-reader-text">', 'link_after' => '</span>', 'depth' => 1,) );?>
+					</div>
+			      	<div class="top-contact <?php echo( esc_attr__($topinfo)); ?>">
 			        <?php
 			        	echo whank_top_header_information();
 			        ?>
-			      </div>
-		    </div>
-		</div> <!-- top header -->
+					</div>
+		    	</div>
+			</div> <!-- top header -->
 		<?php 
 		}
 
-	      if ( get_theme_mod( 'whank_header_media_position','position_two' )=='position_one' ) {
-	      	 echo whank_header_media_render();
-	      }
-	      ?>
-		</div>
+		if ( get_theme_mod( 'whank_header_media_position','position_two' )=='position_one' ) {
+			echo whank_header_media_render();
+		}
+		?>
+
 		<div class="branding container">
 			<div class="col-md-4 col-sm-12">
 				<div class="site-branding">
@@ -102,14 +101,9 @@
 			          <span class="icon-bar"></span>
 			          <span class="icon-bar"></span> 
 			        </button>
-			      </div>
+			    </div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 				<?php
-					/*wp_nav_menu( array(
-						'theme_location'	=>	'primary',
-						'menu_id'	=>	'primary',
-						'menu_class' => 'nav navbar-nav center'
-						) );*/
 					wp_nav_menu( array(
 		                'menu'              => 'primary',
 		                'theme_location'    => 'primary',
@@ -121,33 +115,11 @@
 						'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                 		'walker'            => new WP_Bootstrap_Navwalker(),
 		            ) );
-				?>
-					
+				?>	
 				</div>
 			<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'whank' ); ?></button> -->
 			</div>
 		</nav><!-- #site-navigation -->
-
-		<!-- <nav class="navbar navbar-inverse">
-		    <div class="container-fluid">
-		      <div class="navbar-header">
-		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-		          <span class="icon-bar"></span>
-		          <span class="icon-bar"></span>
-		          <span class="icon-bar"></span> 
-		        </button>
-		        <span id="canvasnav" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
-		      </div>
-		      <div class="collapse navbar-collapse" id="myNavbar">
-		        <ul class="nav navbar-nav center">
-		          <li class="active"><a href="#">Home</a></li>
-		          <li><a href="#">Page 1</a></li>
-		          <li><a href="#">Page 2</a></li> 
-		          <li><a href="#">Page 3</a></li> 
-		        </ul>
-		      </div>
-		    </div>
-		</nav> -->
 		<?php
 		if ( get_theme_mod( 'whank_header_media_position','position_two' )=='position_three' ) {
 	      	whank_header_media_render();
