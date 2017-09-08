@@ -168,6 +168,8 @@ function whank_customize_register( $wp_customize ) {
 		'priority'		=> 310,
 		'title'			=> esc_html__( 'Whank Miscellaneous Options','whank' ),
 	));
+
+   // Read more button text option
    $wp_customize-> add_section( 'whank_read_more_button_section', array(
    		'priority'		=> 1,
    		'title'			=> esc_html__( 'Read more text','whank' ),
@@ -184,6 +186,25 @@ function whank_customize_register( $wp_customize ) {
    		'section'		=> 'whank_read_more_button_section',
    		'setting'		=> 'whank_read_more_button'
    	));
+
+   // Excerpt length option
+   $wp_customize-> add_section( 'whank_excerpt_length_section', array(
+   		'priority'		=> 2,
+   		'title'			=> esc_html__( 'Excerpt number','whank' ),
+   		'description'	=> esc_html__( 'Modify excerpt length', 'whank' ),
+   		'panel'			=> 'whank_miscellaneous_options'
+   	));
+   $wp_customize-> add_setting( 'whank_excerpt_length',array(
+   		'defailt'		=> 30,
+   		'capability'	=> 'edit_theme_options',
+   		'sanitize_callback' => 'wp_filter_nohtml_kses'
+   	));
+   $wp_customize-> add_control( 'whank_excerpt_length', array(
+   		'label'			=> esc_html__( 'Excerpt number','whank' ),
+   		'section'		=> 'whank_excerpt_length_section',
+   		'setting'		=> 'whank_excerpt_length'
+   	));
+
 
 
 

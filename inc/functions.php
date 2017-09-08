@@ -71,7 +71,8 @@ if ( ! function_exists( 'whank_excerpt_length' ) ) :
  * @since Whank 1.0
  */
 function whank_excerpt_length( $length ) {
-	return 25;
+	$length = get_theme_mod( 'whank_excerpt_length', 30 );
+	return $length;
 }
 endif;
 add_filter( 'excerpt_length', 'whank_excerpt_length' );
