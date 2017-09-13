@@ -409,6 +409,7 @@ iframe#wp-custom-header-video {
  .page article .entry-header h1{
     text-align: center;
  }
- .page article .entry-content{
+ .page-template-default article .entry-content{
     padding: 0em 1em;
  }
+ 
