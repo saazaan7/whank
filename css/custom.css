@@ -164,6 +164,7 @@ span.right: {
 .swiper-slide .slider-content p{
     font-size: 2vw;
 }
+/*===============*/
 
 div,h1,h2,h3{
     margin: 0px; padding: 0px;
@@ -404,3 +405,10 @@ iframe#wp-custom-header-video {
     font-weight: bolder;
     color: rgba(14, 14, 14, 0.72);
 }
+ /*============page css==============*/
+ .page article .entry-header h1{
+    text-align: center;
+ }
+ .page article .entry-content{
+    padding: 0em 1em;
+ }
