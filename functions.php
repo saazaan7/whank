@@ -124,6 +124,7 @@ function whank_scripts() {
 	/*Enqueue scripts*/
 	wp_register_script( 'swiper-script', WHANK_JS_URL. '/swiper.jquery'.$suffix.'.js', array('jquery'), '3.4', true );
 	wp_enqueue_script( 'bootstrap-script', WHANK_JS_URL. '/bootstrap'.$suffix.'.js', array('jquery'), '3.3', true );
+	wp_enqueue_script( 'whank-custom-js', WHANK_JS_URL. '/whank'.$suffix.'.js', array('jquery'), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'whank_scripts' );
 
@@ -195,3 +196,6 @@ require get_template_directory() . '/inc/functions.php';
 
 // Load widget functions
 require get_template_directory() . '/inc/widget.php';
+
+// Load widget functions
+require get_template_directory() . '/inc/ajax.php';
