@@ -25,7 +25,7 @@ get_header(); ?>
 					<?php
 					if ( have_posts() ) :
 
-						echo '<div class="page-limit" data-page="/">';
+						echo '<div class="page-limit" data-page=" '.get_site_url().'/">';
 
 							if ( is_home() && ! is_front_page() ) : ?>
 								<header>

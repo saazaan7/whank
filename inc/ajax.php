@@ -21,7 +21,7 @@ function whank_load_more(){
 		));
 
 	if ($query-> have_posts() ):
-		echo '<div class="page-limit" data-page="/page/' .$paged. '">';
+		echo '<div class="page-limit" data-page="'.get_site_url().'/page/' .$paged. '">';
 
 		while ( $query -> have_posts() ) : $query -> the_post();
 
