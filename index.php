@@ -20,44 +20,46 @@ get_header(); ?>
 		<main id="main" class="site-main">
 			<div class="container-fluid">
 	    		<div class="row">
-	    		<div class="archive page whank-posts-container">
-
-				<?php
-				if ( have_posts() ) :
-
-					if ( is_home() && ! is_front_page() ) : ?>
-						<header>
-							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-						</header>
+		    		<div class="archive page whank-posts-container">
 
 					<?php
+					if ( have_posts() ) :
+
+						echo '<div class="page-limit" data-page="/">';
+
+							if ( is_home() && ! is_front_page() ) : ?>
+								<header>
+									<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+								</header>
+
+							<?php
+							endif;
+
+							/* Start the Loop */
+							while ( have_posts() ) : the_post();
+
+								get_template_part( 'template-parts/content', get_post_format() );
+
+							endwhile; 
+							/*get_template_part( 'navigation', 'none');*/
+
+						else :
+
+							get_template_part( 'template-parts/content', 'none' );
+
+						echo '</div>'; /*page-limit end*/
+
 					endif; ?>
-					<div class="">
-						<?php
-						/* Start the Loop */
-						while ( have_posts() ) : the_post();
 
-							get_template_part( 'template-parts/content', get_post_format() );
-
-						endwhile; 
-						/*get_template_part( 'navigation', 'none');*/
-						?>
-					</div>
-					<?php
+					</div> <!-- archive page -->
 					
-
-					else :
-
-						get_template_part( 'template-parts/content', 'none' );
-				endif; ?>
-
-				</div> <!-- archive page -->
-				<div class="container text-center">
-					<a class="btn btn-lg btn-default whank-ajax-load" data-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" data-page="1" >Load more</a>
 				</div>
-				</div>
+				<div class="">
+					<a class="btn btn-lg btn-default whank-ajax-load" data-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" data-page="1" ><i class="fa fa-refresh" aria-hidden="true"></i><span class="text">Load more</span></a>
+					</div>
 			</div>
 		</main><!-- #main -->
+
 	</div> <!-- primary -->
 
 <?php

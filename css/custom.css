@@ -412,4 +412,21 @@ iframe#wp-custom-header-video {
  .page-template-default article .entry-content{
     padding: 0em 1em;
  }
- 
+
+ /*loading btn css*/
+ .loading {
+    cursor: default;
+ }
+ .spin{
+    animation-name: spin;
+    animation-duration: 620ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+ }
+ @keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
