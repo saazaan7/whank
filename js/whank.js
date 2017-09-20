@@ -4,10 +4,16 @@ var last_scroll =0;
 
 /*Ajax functions*/
 	$(document).on('click','.whank-ajax-load:not(.loading)',function(){
+		
 		var that = $(this);
 		var page = $(this).data('page');
 		var newPage = page+1;
 		var ajaxurl =$(this).data('url');
+		var prev = that.data('prev');
+
+		if( typeof prev === 'undefined' ){
+			prev = 0;
+		}
 
 		// Adding dynamic class after clicking the btn for animation
 		that.addClass('loading').find('.text').slideUp(320);
@@ -19,21 +25,45 @@ var last_scroll =0;
 			data : {
 
 				page : page, /*variable name*/
+				prev : prev,
 				action : 'whank_load_more',
 			},
+
 			error : function( response ){
 				console.log(response);
 			},
 			success : function( response ){
-				setTimeout(function(){ //js function to delay
-					that.data('page', newPage);
-					$('.whank-posts-container').append( response );
-					//Removing the loading class to prevent block
-					
-						that.removeClass('loading').find('.text').slideDown(320);
-						that.find('.fa-refresh').removeClass('spin');
 
-				}, 3000);
+				if ( response === 0 ) {
+
+					$('.whank-posts-container').append( '<div class="text-center"><h3>You reached the end of the line!</h3><p>No more posts to load.</p></div>' );
+					that.slideUp(320);
+				} else{
+
+					setTimeout(function(){ //js function to delay
+
+					if ( prev == 1) {
+						$('.whank-posts-container').prepend( response );
+						newPage = page-1;
+					} else{
+						$('.whank-posts-container').append( response );
+					}
+
+					if( newPage == 1 ){
+							
+							that.slideUp(320);
+							
+						} else {
+							
+							that.data('page', newPage);
+							//Removing the loading class to prevent block
+							that.removeClass('loading').find('.text').slideDown(320);
+							that.find('.fa-refresh').removeClass('spin');
+							
+						}
+
+					}, 1000);
+				}
 				
 			}
 		});

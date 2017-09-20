@@ -20,6 +20,11 @@ get_header(); ?>
 		<main id="main" class="site-main">
 			<div class="container-fluid">
 	    		<div class="row">
+	    			<?php if ( is_paged() ):?>
+		    			<div class="load-more-ajax-btn">
+						<a class="btn btn-lg btn-default whank-ajax-load" data-prev="1" data-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" data-page="<?php echo whank_check_paged(1); ?>" ><i class="fa fa-refresh" aria-hidden="true"></i><span class="text">Load Previous</span></a>
+						</div> <!-- load more ajax btn for previous post -->
+					<?php endif; ?>
 		    		<div class="archive page whank-posts-container">
 
 					<?php
@@ -54,9 +59,9 @@ get_header(); ?>
 					</div> <!-- archive page -->
 					
 				</div>
-				<div class="">
+				<div class="load-more-ajax-btn">
 					<a class="btn btn-lg btn-default whank-ajax-load" data-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" data-page="<?php echo whank_check_paged(1); ?>" ><i class="fa fa-refresh" aria-hidden="true"></i><span class="text">Load more</span></a>
-					</div>
+				</div>
 			</div>
 		</main><!-- #main -->
 
