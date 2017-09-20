@@ -25,7 +25,7 @@ get_header(); ?>
 					<?php
 					if ( have_posts() ) :
 
-						echo '<div class="page-limit" data-page=" '.get_site_url().'/">';
+						echo '<div class="page-limit" data-page=" '.get_site_url().'/ '.whank_check_paged().'">';
 
 							if ( is_home() && ! is_front_page() ) : ?>
 								<header>
@@ -55,7 +55,7 @@ get_header(); ?>
 					
 				</div>
 				<div class="">
-					<a class="btn btn-lg btn-default whank-ajax-load" data-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" data-page="1" ><i class="fa fa-refresh" aria-hidden="true"></i><span class="text">Load more</span></a>
+					<a class="btn btn-lg btn-default whank-ajax-load" data-url="<?php echo admin_url( 'admin-ajax.php' ); ?>" data-page="<?php echo whank_check_paged(1); ?>" ><i class="fa fa-refresh" aria-hidden="true"></i><span class="text">Load more</span></a>
 					</div>
 			</div>
 		</main><!-- #main -->

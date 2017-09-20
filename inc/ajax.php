@@ -36,3 +36,17 @@ function whank_load_more(){
 	
 	die();
 }
+
+function whank_check_paged( $num = null ){
+	$output = '';
+	if ( is_paged() ) {
+		$output = 'page/' .get_query_var( 'paged' );
+	}
+
+	if ( $num== 1) {
+		$paged = ( get_query_var( 'paged' )==0 ? 1 : get_query_var( 'paged' ) );
+		return $paged;
+	} else{
+		return $output;
+	}
+}
